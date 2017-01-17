@@ -9,9 +9,9 @@ use App\Http\Controllers\Controller;
 
 class testController extends Controller
 {
-    public function index($nome)
+    public function index()
     {
-        return view('test.index', ['nome'=>$nome]);
+        return view('test.index');
     }
 
     public function notas()
