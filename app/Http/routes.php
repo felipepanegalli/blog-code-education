@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('blog', 'PostController@index');
 Route::get('notas', 'TestController@notas');
+Route::get('blog', 'PostController@index');

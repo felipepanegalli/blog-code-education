@@ -11,7 +11,7 @@ use App\Post;
 class PostController extends Controller
 {
     public function index(){
-        $post = \App\Post::all();
+        $posts = \App\Post::all();
 
         return view('posts.index', compact('posts'));
     }
