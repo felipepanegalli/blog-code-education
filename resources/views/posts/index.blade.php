@@ -24,4 +24,8 @@
         <hr>
     @endforeach
 
+    <div class="text-center">
+        {!! $posts->render() !!}
+    </div>
+
 @endsection

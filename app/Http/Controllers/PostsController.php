@@ -10,9 +10,16 @@ use App\Post;
 
 class PostsController extends Controller
 {
-    public function index(){
-        $posts = \App\Post::all();
+    private $post;
 
+    public function __construct(Post $post)
+    {
+        $this->post = $post;
+    }
+
+    public function index(){
+        //$posts = Post::all();
+        $posts = $this->post->paginate(6);
         return view('posts.index', compact('posts'));
     }
 }
