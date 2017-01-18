@@ -12,5 +12,22 @@
 */
 
 Route::get('/', 'PostsController@index');
-Route::get('admin', 'PostsAdminController@index');
+
+
+Route::group(['prefix'=>'admin'], function (){
+
+    Route::group(['prefix'=>'posts'], function (){
+
+        Route::get('', ['as'=>'admin.posts.index', 'uses'=>'PostsAdminController@index']);
+        Route::get('add', ['as'=>'admin.posts.add', 'uses'=>'PostsAdminController@add']);
+        Route::post('store', ['as'=>'admin.posts.store', 'uses'=>'PostsAdminController@store']);
+        Route::get('edit/{id}', ['as'=>'admin.posts.edit', 'uses'=>'PostsAdminController@edit']);
+        Route::put('update/{id}', ['as'=>'admin.posts.update', 'uses'=>'PostsAdminController@update']);
+        Route::get('del/{id}', ['as'=>'admin.posts.del', 'uses'=>'PostsAdminController@del']);
+
+    });
+});
+
+
+
 

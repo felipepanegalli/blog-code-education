@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call('PostsTableSeeder');
         $this->call('TagTableSeeder');
+        $this->call('CommentSeeder');
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         Model::reguard();

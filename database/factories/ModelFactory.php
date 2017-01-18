@@ -32,3 +32,12 @@ $factory->define(App\Tag::class, function (Faker\Generator $faker) {
         'name' => $faker->word,
     ];
 });
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    return [
+        'post_id' => rand(1, 10),
+        'name' => $faker->word,
+        'email' => $faker->email,
+        'comment' => $faker->text
+    ];
+});
