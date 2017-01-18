@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostsController@index');
+Route::get('admin', 'PostsAdminController@index');
 
-Route::get('notas', 'TestController@notas');
-Route::get('blog', 'PostController@index');

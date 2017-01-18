@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     public function index(){
         $posts = \App\Post::all();
